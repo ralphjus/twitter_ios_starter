@@ -40,3 +40,5 @@ GIFs created with [ezgif](https://ezgif.com/).
 # Notes
 
 SkelentonView is greyed out for now while I work on implementing it correctly.
+
+Lottie loading animation while Tweets are gathered could also be smoother.

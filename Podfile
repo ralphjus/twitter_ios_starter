@@ -8,4 +8,6 @@ target 'Twitter' do
   pod 'AFNetworking'
   pod 'BDBOAuth1Manager'
   pod 'AlamofireImage'
+  pod 'lottie-ios'
+  pod 'SkeletonView'
 end

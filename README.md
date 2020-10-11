@@ -42,3 +42,5 @@ GIFs created with [ezgif](https://ezgif.com/).
 SkelentonView is greyed out for now while I work on implementing it correctly.
 
 Lottie loading animation while Tweets are gathered could also be smoother.
+
+Modally presented timeline screen is now in fullscreen, which is not represented in demostration gifs/video. These gifs will be updated appropriately for part 2.

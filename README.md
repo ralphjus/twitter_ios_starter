@@ -19,24 +19,24 @@ The following **bonus** features are implemented:
 - [x] User can pull to refresh. (1pt)
 - [x] User can load past tweets infinitely. (2pts)
 
-### Gif Walkthrough
+# Gif Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-# Login
+## Login
 
 <img src="https://github.com/ralphjus/twitter_ios_starter/blob/master/Twitter/Assets.xcassets/login.gif" width=250><br>
 
-# Pull to Refresh and Infinite Scroll
+## Pull to Refresh and Infinite Scroll
 
 <img src="https://github.com/ralphjus/twitter_ios_starter/blob/master/Twitter/Assets.xcassets/pullRefresh.gif" width=250><br>
 
-# Landscape Orientation
+## Landscape Orientation
 
 <img src="https://github.com/ralphjus/twitter_ios_starter/blob/master/Twitter/Assets.xcassets/Landscape.gif" width=500><br>
 
 GIFs created with [ezgif](https://ezgif.com/).
 
-## Notes
+# Notes
 
 SkelentonView is greyed out for now while I work on implementing it correctly.

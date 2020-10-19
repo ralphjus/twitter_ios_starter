@@ -20,6 +20,7 @@ PODS:
   - BDBOAuth1Manager (2.0.0):
     - AFNetworking/NSURLSession (~> 3.0.0)
   - lottie-ios (3.1.8)
+  - RSKPlaceholderTextView (6.0.3)
   - SkeletonView (1.10.0)
 
 DEPENDENCIES:
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - AlamofireImage
   - BDBOAuth1Manager
   - lottie-ios
+  - RSKPlaceholderTextView
   - SkeletonView
 
 SPEC REPOS:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - AlamofireImage
     - BDBOAuth1Manager
     - lottie-ios
+    - RSKPlaceholderTextView
     - SkeletonView
 
 SPEC CHECKSUMS:
@@ -44,8 +47,9 @@ SPEC CHECKSUMS:
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  RSKPlaceholderTextView: fc8c8932546298ec9d5e5572284aa42adb87b066
   SkeletonView: 14fbe9702c7fb5c5f011b44ac3ae99fc73155726
 
-PODFILE CHECKSUM: 42a3950204717626f580727e9c7a473ee749f6c5
+PODFILE CHECKSUM: e42d587a7619d79b602e2a9abe392e8008366477
 
 COCOAPODS: 1.9.3

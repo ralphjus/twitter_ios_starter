@@ -73,7 +73,6 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         //view.showSkeleton()
         StartAnimations()
-        loadTweets()
         
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
@@ -83,6 +82,12 @@ class HomeTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadTweets()
+        super.viewDidAppear(animated)
+        
     }
     
     func StartAnimations() {
@@ -114,7 +119,27 @@ class HomeTableViewController: UITableViewController {
           //  cell.hideSkeleton()
         //}
         let userDict = TweetArray[indexPath.row]["user"] as! NSDictionary
+        let entities = TweetArray[indexPath.row]["entities"] as! NSDictionary
+        //let media = entities["media"] as! NSDictionary
         
+        //embedding image
+        if entities["media"] != nil{
+            
+            if let entityArray = entities["media"] as? [[String:Any]],
+               let picture = entityArray.first {
+                print(picture["media_url_https"] as! String)
+                let PicURL = URL(string: picture["media_url_https"] as! String)
+                let data = try? Data(contentsOf: PicURL!)
+                if let imageData = data {
+                    cell.embeddedImage.image = UIImage(data: imageData)
+                    cell.embeddedImage.isHidden = false
+                }
+            }
+        }else{
+            cell.embeddedImage.isHidden = true
+        }
+        
+        ///
         cell.userNameLabel.text = userDict["name"] as? String
         cell.tweetContent.text =  TweetArray[indexPath.row]["text"] as? String
         
@@ -127,6 +152,9 @@ class HomeTableViewController: UITableViewController {
             
             cell.ProfileImageView.clipsToBounds = true
         }
+        cell.setFavorite(TweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = TweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(TweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
     }
@@ -204,5 +232,14 @@ extension HomeTableViewController: SkeletonTableViewDataSource {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return TweetArray.count
+    }
+}
+
+@available(iOS 13.0, *)
+extension Date {
+    func timeAgoDisplay() -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: self, relativeTo: Date())
     }
 }

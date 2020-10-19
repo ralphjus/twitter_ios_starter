@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var followers: UILabel!
     
-    @IBOutlet weak var myAt: UILabel!
+    @IBOutlet weak var Tagline: UILabel!
     
     var dictionary = [NSDictionary]()
     var numTweets: Int!
@@ -48,7 +48,7 @@ class ProfileViewController: UIViewController {
             self.following.text = "\(friends.stringValue) pages followed"
             self.followers.text = "\(followers.stringValue) followers"
             self.tweets.text = "\(statuses.stringValue) posts by you"
-            self.myAt.text = "@\(self.dictionary[0]["screen_name"] as! String)"
+            self.Tagline.text = (self.dictionary[0]["description"] as! String)
 
             
             
